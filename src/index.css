@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --neon-pink: #ff2d55;
+    --neon-blue: #00fff5;
+    --cyber-black: #0a0a0a;
+  }
+
+  body {
+    background-color: var(--cyber-black);
+    color: white;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.neon-text {
+  text-shadow: 0 0 10px var(--neon-blue),
+               0 0 20px var(--neon-blue),
+               0 0 30px var(--neon-blue);
+}
+
+.cyber-border {
+  position: relative;
+  border: 2px solid var(--neon-pink);
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue));
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.cyber-grid {
+  background-image: linear-gradient(var(--neon-blue) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--neon-blue) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-color: rgba(0, 255, 245, 0.05);
+}
